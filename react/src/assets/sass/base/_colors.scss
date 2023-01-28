@@ -1,0 +1,180 @@
+// HSL COLOR
+:root {
+    --black-color: #000000;
+    --white-color: #ffffff;
+
+    // voilet
+    --voilet: 262;
+    --voilet-100: hsl(var(--voilet), 48%, 94%);
+    --voilet-200: hsl(var(--voilet), 51%, 82%);
+    --voilet-300: hsl(var(--voilet), 50%, 64%);
+    --voilet-400: hsl(var(--voilet), 50%, 51%);
+    --voilet-500: hsl(var(--voilet), 77%, 39%);
+    --voilet-600: hsl(var(--voilet), 77%, 35%);
+    --voilet-700: hsl(var(--voilet), 78%, 31%);
+    --voilet-800: hsl(var(--voilet), 77%, 24%);
+    --voilet-900: hsl(var(--voilet), 76%, 8%);
+
+    --success-lighter: hsl(112, 56%, 94%);
+    --success-light: hsl(120, 57%, 81%);
+    --success: hsl(112, 100%, 24%);
+    --success-dark: hsl(112, 100%, 21%);
+    --success-darker: hsl(112, 100%, 18%);
+
+    --danger-lighter: hsl(360, 56%, 94%);
+    --danger-light: hsl(360, 57%, 81%);
+    --danger: hsl(360, 100%, 36%);
+    --danger-dark: hsl(360, 100%, 28%);
+    --danger-darker: hsl(360, 100%, 20%);
+}
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900,
+) !default;
+
+$tt: $grays("100");
+
+$blue: #0d5dfd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #198754 !default;
+$teal: #20c997 !default;
+$cyan: #0dcaf0 !default;
+$brown: #663d00 !default;
+
+// Body
+$body-bg: #f8fafc;
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-900 !default;
+
+// colors
+$first-color: $blue !default;
+
+$blue-50: #eef6ff;
+$blue-100: #d8ebff;
+$blue-200: #b9dbff;
+$blue-300: #89c6ff;
+$blue-400: #52a7ff;
+$blue-500: #2a82ff;
+$blue-600: #0d5dfd;
+$blue-700: #0c4ae9;
+$blue-800: #113cbc;
+$blue-900: #143894;
+
+$brick-red-50: #fef2f2;
+$brick-red-100: #fce9e7;
+$brick-red-200: #f9d2d2;
+$brick-red-300: #f4adad;
+$brick-red-400: #ed7f82;
+$brick-red-500: #e15259;
+$brick-red-600: #bb2d3b;
+$brick-red-700: #ac2435;
+$brick-red-800: #902133;
+$brick-red-900: #7c1f31;
+
+$jewel-50: #eefbf3;
+$jewel-100: #d6f5df;
+$jewel-200: #b1e9c5;
+$jewel-300: #7ed7a4;
+$jewel-400: #49be7e;
+$jewel-500: #26a363;
+$jewel-600: #18834e;
+$jewel-700: #157347;
+$jewel-800: #125335;
+$jewel-900: #0f452d;
+
+$amber-50: #ffffea;
+$amber-100: #fffbc5;
+$amber-200: #fff885;
+$amber-300: #ffed46;
+$amber-400: #ffdf1b;
+$amber-500: #ffbf00;
+$amber-600: #e29300;
+$amber-700: #bb6802;
+$amber-800: #985008;
+$amber-900: #7c420b;
+
+$eastern-blue-50: #edfefe;
+$eastern-blue-100: #d2f8fb;
+$eastern-blue-200: #abf0f6;
+$eastern-blue-300: #71e5ef;
+$eastern-blue-400: #30cee0;
+$eastern-blue-500: #14b1c6;
+$eastern-blue-600: #1494ad;
+$eastern-blue-700: #177287;
+$eastern-blue-800: #1b5e6f;
+$eastern-blue-900: #1b4e5e;
+
+$first-color-50: $blue-50;
+$first-color-100: $blue-100;
+$first-color-200: $blue-200;
+$first-color-300: $blue-300;
+$first-color-400: $blue-400;
+$first-color-500: $blue-500;
+$first-color-600: $blue-600;
+$first-color-700: $blue-700;
+$first-color-800: $blue-800;
+$first-color-900: $blue-900;
+
+$success-color-50: $jewel-50;
+$success-color-100: $jewel-100;
+$success-color-200: $jewel-200;
+$success-color-300: $jewel-300;
+$success-color-400: $jewel-400;
+$success-color-500: $jewel-500;
+$success-color-600: $jewel-600;
+$success-color-700: $jewel-700;
+$success-color-800: $jewel-800;
+$success-color-900: $jewel-900;
+
+$danger-color-50: $brick-red-50;
+$danger-color-100: $brick-red-100;
+$danger-color-200: $brick-red-200;
+$danger-color-300: $brick-red-300;
+$danger-color-400: $brick-red-400;
+$danger-color-500: $brick-red-500;
+$danger-color-600: $brick-red-600;
+$danger-color-700: $brick-red-700;
+$danger-color-800: $brick-red-800;
+$danger-color-900: $brick-red-900;
+
+// $first-color-100: tint($first-color, 80%) !default;
+// $first-color-200: tint($first-color, 60%) !default;
+// $first-color-300: tint($first-color, 40%) !default;
+// // $first-color-400: tint($first-color, 10%) !default;
+// $first-color-400: shade($first-color, 10%) !default;
+// $first-color-500: $first-color !default;
+// $first-color-600: shade($first-color, 20%) !default;
+// $first-color-700: shade($first-color, 40%) !default;
+// $first-color-800: shade($first-color, 60%) !default;
+// $first-color-900: shade($first-color, 80%) !default;

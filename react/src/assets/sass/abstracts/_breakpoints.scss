@@ -1,0 +1,65 @@
+@mixin breakpoints($value) {
+    // mobile portrait
+    @if ($value== "xs") {
+        @media (max-width: "575.98px") and (orientation: portrait) {
+            @content;
+        }
+
+        @media (max-width: "575.98px") and (orientation: landscape) {
+            @content;
+        }
+    }
+
+    // tablet
+    @if ($value== "sm") {
+        @media (min-width: "576px") and (max-width: "767.98px") {
+            @content;
+        }
+    }
+
+    // desktop
+    @if ($value== "md") {
+        @media (min-width: "768px") and (max-width: "991.98px") {
+            @content;
+        }
+    }
+
+    // large
+    @if ($value== "lg") {
+        @media (min-width: "992px") and (max-width: "1199.98px") {
+            @content;
+        }
+    }
+
+    // extra large
+    @if ($value== "xl") {
+        @media (min-width: "1199.98px") and (max-width: "1199.98px") {
+            @content;
+        }
+    }
+
+    // extra large
+    @if ($value== "xxl") {
+        @media (min-width: "1400px") {
+            @content;
+        }
+    }
+}
+
+@mixin grid-center-last($columns) {
+    $total_columns: $columns * 2;
+    $span: $total_columns / $columns;
+    $offset: $columns - 1;
+    $nth-child: if($columns % 2 == 0, "odd", "even");
+
+    display: grid;
+    grid-template-columns: repeat($total_columns, 1fr);
+
+    & > * {
+        grid-column: span $span;
+
+        &:nth-last-child(#{$offset}):nth-child(#{$nth-child}) {
+            grid-column: $span / span $span;
+        }
+    }
+}

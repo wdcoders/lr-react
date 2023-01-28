@@ -1,0 +1,144 @@
+.btn {
+    padding: 0.4rem 0.9rem;
+
+    &:focus {
+        box-shadow: none;
+    }
+    &:active:focus {
+        box-shadow: none !important;
+    }
+
+    &.btn-icon {
+        display: inline-block;
+        padding-top: 0.6rem;
+        line-height: 18px;
+    }
+
+    &.btn-primary {
+        background-color: var(--first-color);
+        border-color: var(--first-color);
+
+        &:hover,
+        &:focus {
+            background-color: var(--first-color-dark);
+            border-color: var(--first-color-dark);
+        }
+    }
+
+    &.btn-sm {
+        padding: 0.25rem 0.5rem;
+        &.btn-icon {
+            display: inline-block;
+            padding-top: 0.6rem;
+            line-height: 15px;
+            padding: 0.5rem 0.4rem 0.3rem 0.4rem;
+        }
+    }
+
+    &.btn-outline-white {
+        color: $first-color-200;
+        border: 1px solid $first-color-200;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:active:focus {
+            color: $first-color-600;
+            background-color: $white;
+        }
+    }
+
+    &.btn-rounded {
+        padding: 0.5rem 1.6rem;
+        @include border-radius(20px);
+
+        &.btn-lg {
+            padding: 0.6rem 1.8rem;
+            @include border-radius(40px);
+        }
+    }
+}
+
+.be-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    @include border-radius(0.4rem);
+
+    &.be-btn-rounded {
+        padding: 0.5rem 1.2rem;
+        @include border-radius(3rem);
+    }
+
+    &.be-btn-icon {
+        i {
+            color: inherit;
+            margin-right: 0.2rem;
+        }
+    }
+
+    &.be-btn-sm {
+        padding: 0.2rem 0.5rem;
+    }
+
+    &.be-btn-lg {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.6rem;
+
+        &.be-btn-icon {
+            i {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    // primary
+    &.be-btn-primary {
+        background: var(--first-color);
+        color: var(--first-color-lighter);
+
+        &:hover,
+        &:focus {
+            background: var(--first-color-dark);
+            color: var(--lighter);
+        }
+
+        .be-btn-icon {
+            color: inherit;
+            font-size: 1.2rem;
+        }
+    }
+
+    // success
+    &.be-btn-success {
+        background: var(--success);
+        color: var(--success-lighter);
+
+        &:hover,
+        &:focus {
+            background: var(--success-dark);
+            color: var(--lighter);
+        }
+
+        .be-btn-icon {
+            color: inherit;
+            font-size: 1.2rem;
+        }
+    }
+
+    // danger
+    &.be-btn-danger {
+        background: var(--danger);
+        color: var(--danger-lighter);
+
+        &:hover,
+        &:focus {
+            background: var(--danger-dark);
+            color: var(--lighter);
+        }
+
+        .be-btn-icon {
+            color: inherit;
+            font-size: 1.2rem;
+        }
+    }
+}

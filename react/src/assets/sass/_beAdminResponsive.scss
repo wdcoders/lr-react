@@ -1,0 +1,96 @@
+@include mq("xs") {
+    .be-wrapper {
+        .be-wrapper-right {
+            margin-left: $be-sidebar-width;
+
+            .be-wrapper-content {
+                .be-page-body {
+                    padding: 2.8rem 3.6rem;
+                }
+            }
+        }
+    }
+
+    // sidebar
+    .be-sidebar {
+        width: $be-sidebar-width;
+        transform: translateX(0%);
+        visibility: visible;
+        left: 0;
+
+        .be-sidebar-header {
+            .be-sidebar-close {
+                display: none;
+            }
+        }
+    }
+
+    .be-header {
+        .be-header-bar {
+            visibility: hidden;
+        }
+    }
+}
+
+// @include mq("sm") {
+//     .be-wrapper {
+//         .be-wrapper-right {
+//             margin-left: 0;
+//             .be-wrapper-content {
+//                 .be-page-body {
+//                     padding: 1rem;
+//                 }
+//             }
+//         }
+//     }
+
+//     // sidebar
+//     .be-sidebar {
+//         position: fixed;
+//         left: -100%;
+//         width: 70%;
+//         transform: translateX(-100%);
+//         visibility: hidden;
+
+//         &.show {
+//             left: 0;
+//         }
+//     }
+// }
+
+// @include mq("xs") {
+//     .be-wrapper {
+//         .be-wrapper-right {
+//             margin-left: 0;
+//             .be-wrapper-content {
+//                 .be-page-header {
+//                     flex-direction: column;
+//                     justify-content: start;
+//                     align-items: start;
+//                     height: auto;
+//                     padding: 1rem 1.6rem;
+
+//                     .be-page-header-controls {
+//                         margin-top: 0.5rem;
+//                     }
+//                 }
+//                 .be-page-body {
+//                     padding: 1rem;
+//                 }
+//             }
+//         }
+//     }
+
+//     // sidebar
+//     .be-sidebar {
+//         position: fixed;
+//         left: -100%;
+//         width: 70%;
+//         transform: translateX(-100%);
+//         visibility: hidden;
+
+//         &.show {
+//             left: 0;
+//         }
+//     }
+// }

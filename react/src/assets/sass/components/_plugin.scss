@@ -1,0 +1,62 @@
+.isloading-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .isloading-wrapper {
+        color: white;
+        i {
+            font-size: 2.2rem;
+            -webkit-animation: spin 4s linear infinite;
+            -moz-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
+        }
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+// ckeditior
+.ck-editor {
+    .ck-toolbar {
+        background: var(--first-color-lighter) !important;
+        border: 2px solid var(--border-color) !important;
+
+        .ck-button {
+            &.ck-on {
+                background: var(--first-color) !important;
+            }
+            &:hover,
+            &:focus {
+                color: white;
+                background: var(--first-color) !important;
+            }
+        }
+    }
+    .ck-content {
+        border: 2px solid var(--border-color) !important;
+        border-color: var(--border-color) !important;
+        border-top: none !important;
+
+        &.ck-focused {
+            box-shadow: none !important;
+            // border: 2px solid var(--first-color) !important;
+            // border-top: none !important;
+        }
+    }
+}
