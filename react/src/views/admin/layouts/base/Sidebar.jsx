@@ -34,7 +34,7 @@ const Sidebar = ({ user }) => {
                     <li>
                         <Link to="users" className="be-sidebar-nav-link">
                             <div className="be-sidebar-nav-text">
-                                <i className="uil uil-apps be-sidebar-nav-icon"></i>
+                                <i className="uil uil-users-alt be-sidebar-nav-icon"></i>
                                 <span>Users</span>
                             </div>
                             {/* <!-- <span className="uil uil-angle-up be-sidebar-nav-arrow"></span> --> */}

@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import axiosClient from "../../axios-client";
+import { Link, Navigate, redirect } from "react-router-dom";
+import axiosClient from "../../../axios-client";
 
-const Users = () => {
+const UserIndex = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -42,9 +43,12 @@ const Users = () => {
                     </ol>
                 </nav>
                 <div className="be-page-header-controls">
-                    <button type="button" className="btn btn-primary">
-                        Add User
-                    </button>
+                    <Link
+                        to="/admin/users/create"
+                        className="btn btn-icon btn-primary"
+                    >
+                        <i className="uil uil-plus"></i> Add User
+                    </Link>
                 </div>
             </div>
 
@@ -71,9 +75,16 @@ const Users = () => {
                                             <td>{d.email}</td>
                                             <td>{d.created_at}</td>
                                             <td>
-                                                <button className="btn btn-sm btn-success">
+                                                <Link
+                                                    className="btn btn-sm btn-success"
+                                                    to={
+                                                        "/admin/users/" +
+                                                        d.id +
+                                                        "/edit"
+                                                    }
+                                                >
                                                     Edit
-                                                </button>
+                                                </Link>
                                                 <button
                                                     className="btn btn-sm btn-danger ms-2"
                                                     onClick={() => onDelete(d)}
@@ -97,4 +108,4 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default UserIndex;

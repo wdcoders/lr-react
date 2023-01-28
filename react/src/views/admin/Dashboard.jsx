@@ -15,12 +15,12 @@ const Dashboard = () => {
                     </ol>
                 </nav>
                 <div className="be-page-header-controls">
-                    <button type="button" className="btn btn-secondary">
+                    {/* <button type="button" className="btn btn-secondary">
                         Back
                     </button>
                     <button type="button" className="btn btn-primary">
                         Save
-                    </button>
+                    </button> */}
                 </div>
             </div>
 

@@ -7,6 +7,11 @@ import GuestLayout from "./views/admin/layouts/auth/GuestLayout";
 import Dashboard from "./views/admin/Dashboard";
 import MasterLayout from "./views/admin/layouts/base/MasterLayout";
 
+// Users
+import UserIndex from "./views/admin/users/Index";
+import UserCreate from "./views/admin/users/Create";
+import UserUpdate from "./views/admin/users/Update";
+
 const router = createBrowserRouter([
     {
         path: "/admin",
@@ -40,7 +45,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "users",
-                element: <Users />,
+                element: <UserIndex />,
+            },
+            {
+                path: "users/create",
+                element: <UserCreate />,
+            },
+            {
+                path: "users/:id/edit",
+                element: <UserUpdate />,
             },
         ],
     },
