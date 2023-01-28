@@ -1,24 +1,41 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import axiosClient from "../../../../axios-client";
 import { useStateContext } from "../../../../contexts/ContextProvider";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
 const MasterLayout = () => {
-    const { user, token } = useStateContext();
+    const { user, token, setUser, setToken } = useStateContext();
 
     if (!token) {
-        console.log(token);
         return <Navigate to="/admin/login" />;
     }
 
+    const onLogout = (e) => {
+        e.preventDefault();
+
+        axiosClient.post("/logout").then(() => {
+            setUser({});
+            setToken(null);
+            return <Navigate to="/admin/login" />;
+        });
+    };
+
+    useEffect(() => {
+        axiosClient.get("/user").then(({ data }) => {
+            setUser(data);
+        });
+    }, []);
+
     return (
         <div className="be-wrapper" id="beWrapper">
-            <Sidebar />
+            <Sidebar user={user} />
 
             <div className="be-wrapper-right">
-                <Navbar />
+                <Navbar onLogout={onLogout} />
 
                 {/*  wrapper content start */}
                 <div className="be-wrapper-content">

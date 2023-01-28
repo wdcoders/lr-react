@@ -1,49 +1,49 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import axiosClient from "../../../axios-client";
 import { useStateContext } from "../../../contexts/ContextProvider";
 
 const Login = () => {
-    const [loginData, setLoginData] = useState({
-        email: "",
-        password: "",
+    const loginFormValidation = Yup.object().shape({
+        email: Yup.string()
+            .email("Invalid email address")
+            .required("Email is required!"),
+        password: Yup.string().required("Password is required!"),
     });
 
     const { setUser, setToken } = useStateContext();
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        console.log(loginData);
-
-        axiosClient
-            .post("/login", loginData)
-            .then(({ data }) => {
-                setUser(data.user);
-                setToken(data.token);
-            })
-            .catch((err) => {
-                const response = err.response;
-                console.log(response);
-            });
-    };
-
-    const handleInput = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-
-        setLoginData({ ...loginData, [name]: value });
-    };
+    const loginForm = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema: loginFormValidation,
+        onSubmit: (values) => {
+            axiosClient
+                .post("/login", values)
+                .then(({ data }) => {
+                    setUser(data.user);
+                    setToken(data.token);
+                })
+                .catch((err) => {
+                    const response = err.response;
+                    console.log(response);
+                });
+        },
+    });
 
     return (
         <>
             <h2 className="block-h2">Welcome</h2>
             <p>Login into your account.</p>
             <div className="divider"></div>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={loginForm.handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">
-                        Email Address
+                        Email Address <span>*</span>
                     </label>
                     <input
                         id="email"
@@ -51,13 +51,21 @@ const Login = () => {
                         className="form-control"
                         name="email"
                         placeholder="Email Address"
-                        onChange={handleInput}
+                        value={loginForm.values.email}
+                        onChange={loginForm.handleChange}
                     />
+                    {loginForm.errors.email && loginForm.touched ? (
+                        <span className="invalid-feedback" role="alert">
+                            {loginForm.errors.email}
+                        </span>
+                    ) : (
+                        ""
+                    )}
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">
-                        Password
+                        Password <span>*</span>
                     </label>
                     <input
                         id="password"
@@ -65,8 +73,16 @@ const Login = () => {
                         placeholder="Password"
                         className="form-control"
                         name="password"
-                        onChange={handleInput}
+                        value={loginForm.values.password}
+                        onChange={loginForm.handleChange}
                     />
+                    {loginForm.errors.password && loginForm.touched ? (
+                        <span className="invalid-feedback" role="alert">
+                            {loginForm.errors.password}
+                        </span>
+                    ) : (
+                        ""
+                    )}
                 </div>
 
                 <div className="mb-3">

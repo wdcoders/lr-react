@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ onLogout }) => {
     const { isUserDropdown, setUserDropdown } = useState(false);
 
     const onUserDropdown = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li>
-                            <a className="dropdown-item" href="">
+                            <a className="dropdown-item" onClick={onLogout}>
                                 <i className="uil uil-power"></i> Logout
                             </a>
                         </li>

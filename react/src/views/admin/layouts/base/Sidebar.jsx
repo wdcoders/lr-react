@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
     return (
         <aside className="be-sidebar" id="beSidebar">
             <div className="be-sidebar-header">
@@ -15,7 +15,7 @@ const Sidebar = () => {
                     <img src="" alt="" />
                 </div>
                 <div className="be-sidebar-name">
-                    <h4>KAMAL KUMAR</h4>
+                    <h4>{user.name}</h4>
                     <small>WEB DEVELOPER</small>
                 </div>
             </div>
